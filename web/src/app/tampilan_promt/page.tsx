@@ -3,18 +3,24 @@
 import { useState } from "react";
 
 export default function TampilanPrompt() {
-  const [text, setText] = useState("");
+    const [text, setText] = useState("");
 
-  return (
-    <div className="min-h-screen bg-[#1a1a1a] flex flex-col items-center justify-start pt-32 px-4">
-      
-      {/* TITLE */}
-      <h1 className="text-3xl font-semibold text-white mb-10">
-        What are you working on?
-      </h1>
+    return (
+        <div className="min-h-screen bg-[#1a1a1a] flex flex-col items-center justify-start pt-32 px-4">
 
-      {/* INPUT BOX */}
-      <div className="w-full max-w-3xl bg-[#2a2a2a] flex items-center px-4 py-3 rounded-full shadow-lg"></div>
-    </div>
+            {/* TITLE */}
+            <h1 className="text-3xl font-semibold text-white mb-10">
+                What are you working on?
+            </h1>
+
+            {/* INPUT BOX */}
+            <div className="w-full max-w-3xl bg-[#2a2a2a] flex items-center px-4 py-3 rounded-full shadow-lg"></div>
+             
+             {/* Plus icon */ }
+            <span className="text-gray-300 text-xl mr-3">＋</span>
+        </div>
+
+           
+    
   );
 }
