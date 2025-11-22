@@ -7,7 +7,7 @@ export default function Header() {
       
       {/* LOGO */}
       <Image
-        source={{ uri: "assets/mylogo.png" }} // sementara pakai logo online
+        source={require("../../assets/images/mylogo.png")} // sementara pakai logo online
         style={styles.logo}
       />
 
