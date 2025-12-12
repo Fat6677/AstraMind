@@ -51,4 +51,8 @@ export default function HomePage() {
 
    return (
     <div className="min-h-screen flex flex-col">
-      <Header /
+      <Header />
+
+      <main className="flex-grow container mx-auto px-4 py-12 flex flex-col items-center justify-center">
+        {!horoscope && !isLoading && (
+          <></>
