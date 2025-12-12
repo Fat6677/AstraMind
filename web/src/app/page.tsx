@@ -37,3 +37,5 @@ export default function HomePage() {
 
       const data: HoroscopeData = await response.json();
       setHoroscope(data);
+      } catch (err: any) {
+      setError(err.message);
