@@ -30,3 +30,7 @@ export default function HomePage() {
         },
          body: JSON.stringify({ sign }),
       });
+
+      if (!response.ok) {
+        throw new Error('Gagal mendapatkan ramalan.');
+      }
