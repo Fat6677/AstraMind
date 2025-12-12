@@ -28,3 +28,5 @@ export default function HomePage() {
         headers: {
           'Content-Type': 'application/json',
         },
+         body: JSON.stringify({ sign }),
+      });
