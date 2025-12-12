@@ -1,6 +1,6 @@
 'use client';
 
-import { FormEvent } from 'react'; 
+import { FormEvent } from 'react';
 interface ZodiacSelectorProps {
     onSignSelect: (sign: string) => void;
     isLoading: boolean;
@@ -31,7 +31,7 @@ export default function ZodiacSelector({ onSignSelect, isLoading }: ZodiacSelect
                     id="zodiac"
                     name="zodiac"
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-black focus:border-black bg-white text-gray-900"
+                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
                 >
                     <option value="">Pilih Zodiak</option>
                     {zodiacSigns.map(sign => (
