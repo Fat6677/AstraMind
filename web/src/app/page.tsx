@@ -21,3 +21,10 @@ export default function HomePage() {
     setIsLoading(true);
     setError(null);
     setHoroscope(null);
+
+    try {
+      const response = await fetch('/api/generate-horoscope', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
