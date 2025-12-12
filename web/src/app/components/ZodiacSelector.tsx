@@ -17,3 +17,13 @@ export default function ZodiacSelector({ onSignSelect, isLoading }: ZodiacSelect
       onSignSelect(sign);
     }
   };
+
+  return (
+    <form onSubmit={handleSubmit} className="w-full max-w-md mx-auto">
+      <div className="mb-4">
+        <label htmlFor="zodiac" className="block text-sm font-medium text-gray-700 mb-2">
+          Pilih Tanda Zodiak Anda
+        </label>
+        <select
+          id="zodiac"
+          name="zodiac"
