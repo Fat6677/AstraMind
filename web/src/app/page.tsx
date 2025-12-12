@@ -53,13 +53,11 @@ export default function HomePage() {
     <div className="min-h-screen flex flex-col">
       <Header />
 
-      <main className="flex-grow container mx-auto px-4 py-12 flex flex-col items-center justify-center">
-        {!horoscope && !isLoading && (
-          <>
-          <h2 className="text-4xl font-bold text-center mb-2">Temukan Jalan Anda Hari Ini</h2>
-            <p className="text-lg text-gray-600 text-center mb-8">Pilih zodiak Anda dan dapatkan wawasan unik dari Astro AI.</p>
-          </>
-        )}
+       <main className="flex-grow">
+        {/* Hero Section dengan Gradien */}
+        <div className="bg-gradient-to-br from-purple-100 via-white to-indigo-100">
+          <div className="container mx-auto px-6 pt-24 pb-12">
+            <div className="flex flex-col lg:flex-row gap-12 items-center">
 
         {error && <p className="text-red-500 mb-4">{error}</p>}
         {isLoading && <p className="text-lg text-gray-500">Sedang berkomunikasi dengan kosmos...</p>}
