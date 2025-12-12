@@ -55,4 +55,8 @@ export default function HomePage() {
 
       <main className="flex-grow container mx-auto px-4 py-12 flex flex-col items-center justify-center">
         {!horoscope && !isLoading && (
-          <></>
+          <>
+          <h2 className="text-4xl font-bold text-center mb-2">Temukan Jalan Anda Hari Ini</h2>
+            <p className="text-lg text-gray-600 text-center mb-8">Pilih zodiak Anda dan dapatkan wawasan unik dari Astro AI.</p>
+          </>
+        )}
