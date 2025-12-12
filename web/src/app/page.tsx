@@ -67,3 +67,8 @@ export default function HomePage() {
 
         {horoscope && <HoroscopeCard sign={horoscope.sign} text={horoscope.horoscope} onReset={handleReset} />}
       </main>
+
+       <Footer />
+    </div>
+  );
+}
