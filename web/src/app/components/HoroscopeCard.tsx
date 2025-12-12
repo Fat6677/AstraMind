@@ -6,7 +6,7 @@ interface HoroscopeCardProps {
 
 export default function HoroscopeCard({ sign, text, onReset }: HoroscopeCardProps) {
   return (
-    <div className="w-full max-w-2xl mx-auto mt-8 p-8 bg-white border-2 border-gray-200 rounded-2xl shadow-lg">
+      <div className="w-full max-w-2xl p-8 bg-white/90 backdrop-blur-sm border border-gray-200/50 rounded-2xl shadow-xl">
       <h2 className="text-2xl font-bold text-center mb-4">Ramalan untuk {sign}</h2>
       <p className="text-gray-700 text-lg leading-relaxed text-center">{text}</p>
       <button
