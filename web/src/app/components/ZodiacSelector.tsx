@@ -34,3 +34,15 @@ export default function ZodiacSelector({ onSignSelect, isLoading }: ZodiacSelect
           {zodiacSigns.map(sign => (
             <option key={sign} value={sign}>{sign}</option>
           ))}
+          </select>
+      </div>
+      <button
+        type="submit"
+        disabled={isLoading}
+        className="w-full bg-black text-white font-semibold py-2 px-4 rounded-lg hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
+      >
+        {isLoading ? 'Membuat Ramalan...' : 'Dapatkan Ramalan Saya'}
+      </button>
+    </form>
+  );
+}
