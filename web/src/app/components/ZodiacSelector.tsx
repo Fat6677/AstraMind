@@ -33,7 +33,7 @@ export default function ZodiacSelector({ onSignSelect, isLoading }: ZodiacSelect
                     required
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-black focus:border-black bg-white text-gray-900"
                 >
-                    <option value="">-- Pilih --</option>
+                    <option value="">Pilih Zodiak</option>
                     {zodiacSigns.map(sign => (
                         <option key={sign} value={sign}>{sign}</option>
                     ))}
