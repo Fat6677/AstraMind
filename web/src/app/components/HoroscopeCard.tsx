@@ -10,10 +10,10 @@ export default function HoroscopeCard({ sign, text, onReset }: HoroscopeCardProp
        <h2 className="text-3xl font-bold text-center mb-6 bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
         Ramalan untuk {sign}
       </h2>
-      <p className="text-gray-700 text-lg leading-relaxed text-center">{text}</p>
+       <p className="text-gray-700 text-lg leading-relaxed text-center">{text}</p>
       <button
         onClick={onReset}
-        className="mt-6 w-full bg-gray-100 text-gray-800 font-semibold py-2 px-4 rounded-lg hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black transition-colors"
+        className="mt-8 w-full bg-gray-100 text-gray-800 font-semibold py-3 px-4 rounded-xl hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition-all"
       >
         Coba Lagi
       </button>
