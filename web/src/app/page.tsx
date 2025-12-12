@@ -1,15 +1,18 @@
+'use client'; // Komponen ini interaktif dan menggunakan state
 
-import React, { use } from "react";
-import Link from "next/link";
+import { useState } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ZodiacSelector from './components/ZodiacSelector';
+import HoroscopeCard from './components/HoroscopeCard';
+
 
 
 
 export default function HeaderWithLogo() {
   return (  
     <>
+
       <ZodiacSelector/>
       <Header />
       <Footer />
