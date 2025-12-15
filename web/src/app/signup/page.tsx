@@ -209,3 +209,21 @@ export default function SignUpPage() {
               style={{ width: formStep === 'basic' ? '50%' : '100%' }}
             ></div>
           </div>
+
+         {/* Form */}
+          <form className={styles.signUpForm} onSubmit={handleSubmit}>
+            {formStep === 'basic' ? (
+              <BasicInfoStep 
+                formData={formData}
+                errors={errors}
+                passwordStrength={passwordStrength}
+                onChange={handleInputChange}
+              />
+            ) : (
+              <ZodiacStep 
+                formData={formData}
+                errors={errors}
+                onChange={handleInputChange}
+                onBack={handlePreviousStep}
+              />
+            )}
