@@ -40,4 +40,25 @@ export default function SignUpSuccessPage() {
     router.push('/compatibility');
   };
 
-  
+      // Countdown untuk redirect
+    const timer = setInterval(() => {
+      setCountdown(prev => {
+        if (prev <= 1) {
+          clearInterval(timer);
+          router.push('/login');
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [router]);
+
+  const handleGoToLogin = () => {
+    router.push('/login');
+  };
+
+  const handleExplore = () => {
+    router.push('/compatibility');
+  };
