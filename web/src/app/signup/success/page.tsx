@@ -86,3 +86,25 @@ export default function SignUpSuccessPage() {
               </div>
             </div>
           )}
+
+                   {/* Next Steps */}
+          <div className={styles.nextSteps}>
+            <h3 className={styles.stepsTitle}>Langkah Selanjutnya</h3>
+            <div className={styles.stepsGrid}>
+              <div className={styles.stepCard}>
+                <div className={styles.stepNumber}>1</div>
+                <h4>Verifikasi Email</h4>
+                <p>Periksa inbox email Anda untuk tautan verifikasi</p>
+              </div>
+              <div className={styles.stepCard}>
+                <div className={styles.stepNumber}>2</div>
+                <h4>Lengkapi Profil</h4>
+                <p>Tambah detail untuk ramalan yang lebih personal</p>
+              </div>
+              <div className={styles.stepCard}>
+                <div className={styles.stepNumber}>3</div>
+                <h4>Mulai Eksplorasi</h4>
+                <p>Coba fitur Compatibility Checker</p>
+              </div>
+            </div>
+          </div>
