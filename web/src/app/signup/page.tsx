@@ -74,3 +74,38 @@ export default function SignUpPage() {
       setPasswordStrength(calculatePasswordStrength(value as string));
     }
   };
+
+   const validateForm = (): boolean => {
+    const newErrors: Partial<SignUpFormData> = {};
+
+    if (!formData.username.trim()) {
+      newErrors.username = 'Username diperlukan';
+    }
+
+    if (!formData.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+      newErrors.email = 'Format email tidak valid';
+    }
+
+    if (formData.password.length < 8) {
+      newErrors.password = 'Password minimal 8 karakter';
+    }
+
+    if (formData.password !== formData.confirmPassword) {
+      newErrors.confirmPassword = 'Password tidak cocok';
+    }
+
+    if (!formData.birthDate) {
+      newErrors.birthDate = 'Tanggal lahir diperlukan';
+    }
+
+    if (!formData.zodiac) {
+      newErrors.zodiac = 'Pilih zodiak Anda';
+    }
+
+    if (!formData.agreeTerms) {
+      newErrors.agreeTerms = 'Anda harus menyetujui syarat dan ketentuan';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
