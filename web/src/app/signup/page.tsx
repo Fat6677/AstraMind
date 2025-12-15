@@ -65,3 +65,12 @@ export default function SignUpPage() {
     if (/[^A-Za-z0-9]/.test(password)) strength += 25;
     return strength;
   };
+
+ const handleInputChange = (field: keyof SignUpFormData, value: string | boolean) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+    setErrors(prev => ({ ...prev, [field]: undefined }));
+
+    if (field === 'password') {
+      setPasswordStrength(calculatePasswordStrength(value as string));
+    }
+  };
