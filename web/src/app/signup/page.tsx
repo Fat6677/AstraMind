@@ -109,3 +109,16 @@ export default function SignUpPage() {
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
+
+    const handleNextStep = () => {
+    if (formStep === 'basic') {
+      const basicFields = ['username', 'email', 'password', 'confirmPassword', 'birthDate'];
+      const hasError = basicFields.some(field => !formData[field as keyof SignUpFormData]);
+      
+      if (!hasError) {
+        setFormStep('zodiac');
+      } else {
+        alert('Lengkapi semua field terlebih dahulu');
+      }
+    }
+  };
