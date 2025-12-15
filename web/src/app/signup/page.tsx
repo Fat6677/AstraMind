@@ -122,3 +122,28 @@ export default function SignUpPage() {
       }
     }
   };
+
+   const handlePreviousStep = () => {
+    setFormStep('basic');
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
+
+    setIsLoading(true);
+
+    // Simulasi API call
+    setTimeout(() => {
+      setIsLoading(false);
+      
+      // Simpan data ke localStorage (simulasi)
+      localStorage.setItem('astro_user_temp', JSON.stringify(formData));
+      
+      // Redirect ke success page
+      router.push('/signup/success');
+    }, 2000);
+  };
