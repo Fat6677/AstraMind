@@ -2,7 +2,7 @@
 'use client';
 
 import { useState } from 'react';
-import styles from './Login.module.css';
+import styles from './login.module.css';
 
 export default function LoginPage() {
   const [username, setUsername] = useState('');
@@ -127,7 +127,7 @@ export default function LoginPage() {
         </form>
 
         <div className={styles.footer}>
-          <p>© 2023 Astro Oracles. All cosmic rights reserved.</p>
+          <p>© 2025 Astro Oracles. All cosmic rights reserved.</p>
           <p>
             <a href="#" onClick={(e) => e.preventDefault()}>Terms of Service</a>
             {' | '}
