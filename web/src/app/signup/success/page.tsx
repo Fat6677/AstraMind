@@ -108,3 +108,18 @@ export default function SignUpSuccessPage() {
               </div>
             </div>
           </div>
+        {/* Action Buttons */}
+          <div className={styles.actionButtons}>
+            <button
+              className={styles.primaryButton}
+              onClick={handleGoToLogin}
+            >
+              Lanjut ke Login ({countdown})
+            </button>
+            <button
+              className={styles.secondaryButton}
+              onClick={handleExplore}
+            >
+              Jelajahi Fitur
+            </button>
+          </div>
