@@ -288,3 +288,45 @@ export default function SignUpPage() {
               </button>
             </div>
           </div>
+
+                   {/* Footer Note */}
+          <div className={styles.footerNote}>
+            <p>
+              Dengan mendaftar, Anda menyetujui{' '}
+              <button type="button" className={styles.inlineLink}>
+                Syarat Layanan
+              </button>{' '}
+              dan{' '}
+              <button type="button" className={styles.inlineLink}>
+                Kebijakan Privasi
+              </button>{' '}
+              kami
+            </p>
+          </div>
+        </div>
+
+        {/* Cosmic Benefits */}
+        <div className={styles.benefitsSection}>
+          <h3 className={styles.benefitsTitle}>Manfaat Bergabung</h3>
+          <div className={styles.benefitsGrid}>
+            <div className={styles.benefitCard}>
+              <div className={styles.benefitIcon}>🔮</div>
+              <h4>Ramalan Personal</h4>
+              <p>Analisis zodiak berdasarkan profil unik Anda</p>
+            </div>
+            <div className={styles.benefitCard}>
+              <div className={styles.benefitIcon}>💫</div>
+              <h4>Kompatibilitas</h4>
+              <p>Cek kecocokan dengan pasangan atau teman</p>
+            </div>
+            <div className={styles.benefitCard}>
+              <div className={styles.benefitIcon}>📅</div>
+              <h4>Horoskop Harian</h4>
+              <p>Panduan kosmik untuk hari Anda</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
