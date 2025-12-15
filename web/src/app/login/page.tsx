@@ -15,6 +15,10 @@ export default function LoginPage() {
     alert(`Welcome, ${username || 'cosmic traveler'}! Your destiny awaits...`);
   };
 
+      const handleToForgetPassword = () => {
+        window.location.href = '/forgot-password';
+    };
+
   return (
     <div className={styles.astroLoginContainer}>
       <div className={styles.starsBackground}></div>
@@ -73,7 +77,7 @@ export default function LoginPage() {
               />
               <span>Remember me</span>
             </label>
-            <a href="#" className={styles.forgotLink} onClick={(e) => e.preventDefault()}>
+            <a href="#" className={styles.forgotLink} onClick={handleToForgetPassword}>
               Forgot password?
             </a>
           </div>
