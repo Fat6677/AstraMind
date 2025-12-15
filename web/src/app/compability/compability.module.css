@@ -1,0 +1,820 @@
+/* src/app/compatibility/Compatibility.module.css */
+
+.compatibilityContainer {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2a 30%, #0a1a2a 70%, #0a0a1a 100%);
+  color: #f0f0f0;
+  overflow-x: hidden;
+  padding: 2rem 1rem;
+}
+
+.nebulaBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(106, 13, 173, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(13, 71, 173, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(173, 13, 136, 0.1) 0%, transparent 50%);
+  z-index: 0;
+  animation: nebulaFloat 20s infinite alternate ease-in-out;
+}
+
+.nebulaOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 0%, rgba(10, 10, 26, 0.7) 100%);
+  z-index: 1;
+}
+
+.stars, .stars2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.stars {
+  background-image: 
+    radial-gradient(1px 1px at 20px 30px, rgba(255, 255, 255, 0.5), transparent),
+    radial-gradient(1px 1px at 40px 70px, rgba(255, 255, 255, 0.3), transparent),
+    radial-gradient(2px 2px at 50px 160px, rgba(255, 255, 255, 0.4), transparent);
+  background-repeat: repeat;
+  animation: twinkle 3s infinite;
+}
+
+.stars2 {
+  background-image: 
+    radial-gradient(1px 1px at 100px 200px, rgba(200, 150, 255, 0.4), transparent),
+    radial-gradient(1px 1px at 150px 300px, rgba(150, 200, 255, 0.3), transparent);
+  animation: twinkle 4s infinite reverse;
+}
+
+.contentWrapper {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-top: 2rem;
+}
+
+.mainTitle {
+  font-size: 3.5rem;
+  font-weight: 300;
+  background: linear-gradient(135deg, #ffffff 0%, #d8b4fe 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+  font-family: 'Georgia', serif;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #b0b0d0;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.selectionSection {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+  align-items: start;
+}
+
+.zodiacPanel {
+  background: rgba(20, 15, 40, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.panelHeader {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.panelTitle {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.panelSubtitle {
+  color: #a0a0c0;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.zodiacGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.zodiacCard {
+  position: relative;
+  background: rgba(30, 25, 50, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.2rem 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  color: #d0d0f0;
+}
+
+.zodiacCard:hover {
+  background: rgba(40, 35, 60, 0.6);
+  transform: translateY(-2px);
+  border-color: rgba(var(--zodiac-color, 255, 105, 180), 0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.zodiacCard.selected {
+  background: rgba(var(--zodiac-color, 255, 105, 180), 0.1);
+  border-color: rgba(var(--zodiac-color, 255, 105, 180), 0.5);
+  box-shadow: 0 0 20px rgba(var(--zodiac-color, 255, 105, 180), 0.2);
+}
+
+.selectionGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  box-shadow: inset 0 0 30px rgba(var(--zodiac-color, 255, 105, 180), 0.2);
+  pointer-events: none;
+  animation: pulseGlow 2s infinite;
+}
+
+.zodiacSymbol {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: rgba(var(--zodiac-color, 255, 105, 180), 0.8);
+}
+
+.zodiacName {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  color: #ffffff;
+}
+
+.zodiacDate {
+  font-size: 0.8rem;
+  color: #a0a0c0;
+  margin-bottom: 0.5rem;
+}
+
+.zodiacDescription {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+}
+
+.selectedInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border-left: 4px solid rgba(var(--zodiac-color, 255, 105, 180), 0.8);
+}
+
+.selectedSymbol {
+  font-size: 3rem;
+  flex-shrink: 0;
+}
+
+.selectedDetails h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.selectedDetails p {
+  margin: 0.25rem 0 0;
+  color: #b0b0d0;
+  font-size: 0.9rem;
+}
+
+.connectionContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 4rem;
+}
+
+.connectionOrbit {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 2px dashed rgba(216, 180, 254, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: orbitRotate 20s linear infinite;
+}
+
+.connectionCenter {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.constellationDot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: rgba(216, 180, 254, 0.8);
+  border-radius: 50%;
+  transition: all 0.5s ease;
+}
+
+.constellationDot:nth-child(1) {
+  top: 20%;
+  left: 20%;
+}
+
+.constellationDot:nth-child(2) {
+  top: 50%;
+  left: 70%;
+}
+
+.constellationDot:nth-child(3) {
+  top: 80%;
+  left: 30%;
+}
+
+.constellationDot.active {
+  background: #ffffff;
+  box-shadow: 0 0 15px rgba(216, 180, 254, 0.8);
+  transform: scale(1.5);
+}
+
+.constellationLine {
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(216, 180, 254, 0.6), transparent);
+  transition: all 0.5s ease;
+  opacity: 0.3;
+}
+
+.constellationLine:nth-child(4) {
+  width: 40px;
+  top: 25%;
+  left: 25%;
+  transform: rotate(45deg);
+}
+
+.constellationLine:nth-child(5) {
+  width: 45px;
+  top: 55%;
+  left: 25%;
+  transform: rotate(-30deg);
+}
+
+.constellationLine:nth-child(6) {
+  width: 35px;
+  top: 70%;
+  left: 55%;
+  transform: rotate(15deg);
+}
+
+.constellationLine:nth-child(7) {
+  width: 50px;
+  top: 40%;
+  left: 60%;
+  transform: rotate(60deg);
+}
+
+.constellationLine.active {
+  opacity: 1;
+  background: linear-gradient(90deg, transparent, rgba(216, 180, 254, 1), transparent);
+}
+
+.connectionLabel {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.energyFlow {
+  display: block;
+  font-size: 1.2rem;
+  color: #d8b4fe;
+  margin-bottom: 0.5rem;
+  font-weight: 300;
+}
+
+.connectingHearts {
+  display: block;
+  font-size: 0.9rem;
+  color: #a0a0c0;
+  font-style: italic;
+}
+
+.actionSection {
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.checkButton {
+  background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
+  border: none;
+  border-radius: 50px;
+  padding: 1.2rem 4rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+  position: relative;
+  overflow: hidden;
+  min-width: 250px;
+}
+
+.checkButton:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(139, 92, 246, 0.4);
+}
+
+.checkButton:active:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.checkButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.checkButton.active:not(:disabled)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: shine 2s infinite;
+}
+
+.resetButton {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  color: #b0b0d0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.resetButton:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+}
+
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #ffffff;
+  animation: spin 1s infinite linear;
+  margin-right: 10px;
+}
+
+.resultSection {
+  margin-top: 4rem;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.resultCard {
+  background: rgba(20, 15, 40, 0.8);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 3rem;
+  border: 1px solid rgba(216, 180, 254, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.resultCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #8b5cf6, #a78bfa, #d8b4fe);
+}
+
+.resultHeader {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.percentageCircle {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+}
+
+.circleSvg {
+  width: 120px;
+  height: 120px;
+  transform: rotate(-90deg);
+}
+
+.circleBg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.1);
+  stroke-width: 3;
+}
+
+.circleProgress {
+  fill: none;
+  stroke: url(#gradient);
+  stroke-width: 3;
+  stroke-linecap: round;
+  transition: stroke-dasharray 1.5s ease;
+}
+
+.percentageText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #ffffff;
+}
+
+.circleGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.3);
+  animation: pulse 2s infinite;
+  pointer-events: none;
+}
+
+.resultTitleContainer {
+  flex: 1;
+}
+
+.resultTitle {
+  font-size: 2.8rem;
+  font-weight: 300;
+  margin: 0 0 0.5rem;
+  background: linear-gradient(135deg, #ffffff 0%, #d8b4fe 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.2;
+}
+
+.resultSubtitle {
+  font-size: 1.2rem;
+  color: #b0b0d0;
+  font-style: italic;
+}
+
+.resultContent {
+  margin-bottom: 3rem;
+}
+
+.resultDescription {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #e0e0f0;
+  margin-bottom: 3rem;
+  padding-left: 1rem;
+  border-left: 3px solid rgba(216, 180, 254, 0.5);
+}
+
+.resultDetails {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.detailTitle {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.titleIcon {
+  font-size: 1.5rem;
+}
+
+.detailList {
+  list-style: none;
+  padding: 0;
+}
+
+.detailList li {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: #d0d0f0;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.detailList li:before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: rgba(216, 180, 254, 0.8);
+  font-size: 1.2rem;
+}
+
+.strengthsSection .detailList li:before {
+  color: #8b5cf6;
+}
+
+.challengesSection .detailList li:before {
+  color: #a78bfa;
+}
+
+.adviceSection {
+  background: rgba(216, 180, 254, 0.05);
+  border-radius: 16px;
+  padding: 2rem;
+  border-left: 4px solid #8b5cf6;
+}
+
+.adviceTitle {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.adviceText {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #e0e0f0;
+  font-style: italic;
+  margin: 0;
+}
+
+.resultFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.shareSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #b0b0d0;
+}
+
+.shareButtons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.shareButton {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+.shareButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.saveButton {
+  background: transparent;
+  border: 1px solid rgba(216, 180, 254, 0.5);
+  border-radius: 25px;
+  padding: 0.8rem 2rem;
+  color: #d8b4fe;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.saveButton:hover {
+  background: rgba(216, 180, 254, 0.1);
+  border-color: rgba(216, 180, 254, 0.8);
+}
+
+.reflectionNote {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: rgba(216, 180, 254, 0.05);
+  border-radius: 16px;
+  border: 1px solid rgba(216, 180, 254, 0.1);
+  text-align: center;
+  font-style: italic;
+  color: #b0b0d0;
+  line-height: 1.6;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  color: #8888aa;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.footer p {
+  margin: 0.5rem 0;
+}
+
+/* Animations */
+@keyframes nebulaFloat {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-20px, 20px) scale(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes orbitRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .selectionSection {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .connectionContainer {
+    order: -1;
+    padding-top: 0;
+    margin-bottom: 2rem;
+  }
+  
+  .zodiacPanel {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainTitle {
+    font-size: 2.5rem;
+  }
+  
+  .zodiacGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .resultDetails {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .resultHeader {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  
+  .resultTitle {
+    font-size: 2.2rem;
+  }
+  
+  .resultFooter {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: stretch;
+  }
+  
+  .shareSection {
+    justify-content: center;
+  }
+}
+
