@@ -23,3 +23,18 @@ type ZodiacOption = {
   element: string;
   dates: string;
 };
+
+const zodiacOptions: ZodiacOption[] = [
+  { value: 'aries', label: 'Aries', symbol: '♈', element: 'Fire', dates: 'Mar 21 - Apr 19' },
+  { value: 'taurus', label: 'Taurus', symbol: '♉', element: 'Earth', dates: 'Apr 20 - May 20' },
+  { value: 'gemini', label: 'Gemini', symbol: '♊', element: 'Air', dates: 'May 21 - Jun 20' },
+  { value: 'cancer', label: 'Cancer', symbol: '♋', element: 'Water', dates: 'Jun 21 - Jul 22' },
+  { value: 'leo', label: 'Leo', symbol: '♌', element: 'Fire', dates: 'Jul 23 - Aug 22' },
+  { value: 'virgo', label: 'Virgo', symbol: '♍', element: 'Earth', dates: 'Aug 23 - Sep 22' },
+  { value: 'libra', label: 'Libra', symbol: '♎', element: 'Air', dates: 'Sep 23 - Oct 22' },
+  { value: 'scorpio', label: 'Scorpio', symbol: '♏', element: 'Water', dates: 'Oct 23 - Nov 21' },
+  { value: 'sagittarius', label: 'Sagittarius', symbol: '♐', element: 'Fire', dates: 'Nov 22 - Dec 21' },
+  { value: 'capricorn', label: 'Capricorn', symbol: '♑', element: 'Earth', dates: 'Dec 22 - Jan 19' },
+  { value: 'aquarius', label: 'Aquarius', symbol: '♒', element: 'Air', dates: 'Jan 20 - Feb 18' },
+  { value: 'pisces', label: 'Pisces', symbol: '♓', element: 'Water', dates: 'Feb 19 - Mar 20' },
+];
