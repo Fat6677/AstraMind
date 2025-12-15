@@ -123,3 +123,31 @@ export default function SignUpSuccessPage() {
               Jelajahi Fitur
             </button>
           </div>
+
+                    {/* Welcome Gift */}
+          <div className={styles.welcomeGift}>
+            <div className={styles.giftIcon}>🎁</div>
+            <p>
+              <strong>Bonus:</strong> Anda mendapat akses 7 hari premium gratis!
+              Nikmati fitur eksklusif tanpa batas.
+            </p>
+          </div>
+        </div>
+
+        {/* Footer */}
+        <footer className={styles.footer}>
+          <p>© 2023 Astro Oracles • Welcome to the Cosmic Community</p>
+          <p className={styles.supportText}>
+            Butuh bantuan?{' '}
+            <button 
+              className={styles.supportLink}
+              onClick={() => console.log('Support clicked')}
+            >
+              Hubungi Dukungan
+            </button>
+          </p>
+        </footer>
+      </div>
+    </div>
+  );
+}
