@@ -151,3 +151,48 @@ export default function ForgotPasswordPage() {
     </div>
   );
 }
+
+// Success Message Component
+function SuccessMessage({ email, onBack }: { email: string; onBack: () => void }) {
+  return (
+    <div className={styles.successSection}>
+      <div className={styles.successIcon}>✨</div>
+      <h2 className={styles.successTitle}>Tautan Telah Dikirim!</h2>
+      <p className={styles.successMessage}>
+        Kami telah mengirim tautan reset password ke{' '}
+        <span className={styles.emailHighlight}>{email}</span>
+      </p>
+      
+      <div className={styles.successInstructions}>
+        <h3>Langkah selanjutnya:</h3>
+        <ol className={styles.instructionsList}>
+          <li>Periksa inbox email Anda</li>
+          <li>Klik tautan reset password</li>
+          <li>Buat password baru yang kuat</li>
+          <li>Login dengan password baru</li>
+        </ol>
+      </div>
+
+      <div className={styles.successActions}>
+        <button 
+          className={styles.resendButton}
+          onClick={() => console.log('Resend email clicked')}
+        >
+          Kirim Ulang Email
+        </button>
+        <button 
+          className={styles.backToLoginButton}
+          onClick={onBack}
+        >
+          Kembali ke Login
+        </button>
+      </div>
+
+      <div className={styles.checkPromo}>
+        <p>
+          <strong>Tips:</strong> Gunakan kombinasi simbol, angka, dan huruf besar/kecil untuk password yang lebih aman
+        </p>
+      </div>
+    </div>
+  );
+}
