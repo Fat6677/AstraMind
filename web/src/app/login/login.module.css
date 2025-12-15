@@ -1,0 +1,379 @@
+/* App.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0a0a2a 0%, #1a1a3a 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.astro-login-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Latar belakang bintang */
+.stars-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #ff69b4, transparent),
+    radial-gradient(2px 2px at 40px 70px, #ff69b4, transparent),
+    radial-gradient(2px 2px at 60px 20px, #ff69b4, transparent),
+    radial-gradient(3px 3px at 90px 50px, #ff69b4, transparent),
+    radial-gradient(2px 2px at 130px 80px, #ff69b4, transparent),
+    radial-gradient(3px 3px at 160px 30px, #ff69b4, transparent);
+  background-repeat: repeat;
+  z-index: 0;
+  opacity: 0.7;
+}
+
+.stars-background-2 {
+  transform: scale(1.1);
+  opacity: 0.5;
+  animation: twinkle 4s infinite alternate;
+}
+
+/* Kartu login */
+.astro-login-card {
+  background: rgba(10, 10, 42, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 105, 180, 0.2);
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.astro-login-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 105, 180, 0.1) 0%, transparent 70%);
+  z-index: -1;
+}
+
+/* Logo */
+.logo-container {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Placeholder untuk logo/gambar utama - Warna pink sementara */
+.astro-logo-placeholder {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+  position: relative;
+  background: rgba(255, 105, 180, 0.1);
+  border-radius: 50%;
+  border: 2px dashed #ff69b4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Planet pink */
+.planet {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(145deg, #ff69b4, #ff1493);
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.7);
+}
+
+/* Orbit */
+.orbit {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: 1px dashed rgba(255, 105, 180, 0.5);
+  border-radius: 50%;
+  animation: spin 20s linear infinite;
+}
+
+/* Bintang-bintang kecil */
+.stars-small, .stars-small-2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 15px 15px, #ff69b4, transparent),
+    radial-gradient(2px 2px at 85px 25px, #ff69b4, transparent),
+    radial-gradient(2px 2px at 35px 85px, #ff69b4, transparent),
+    radial-gradient(2px 2px at 75px 75px, #ff69b4, transparent);
+}
+
+.stars-small-2 {
+  transform: rotate(45deg);
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(to right, #ff69b4, #ffb6c1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 3px;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #b0b0d0;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+/* Form */
+.login-form {
+  margin-top: 30px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  color: #d0d0f0;
+  font-weight: 500;
+}
+
+.form-input {
+  width: 100%;
+  padding: 15px 20px;
+  background: rgba(20, 20, 50, 0.7);
+  border: 1px solid rgba(255, 105, 180, 0.3);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #ff69b4;
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+}
+
+.form-input::placeholder {
+  color: #8888aa;
+}
+
+/* Opsi form */
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  color: #d0d0f0;
+  cursor: pointer;
+}
+
+.checkbox-label input {
+  margin-right: 8px;
+  accent-color: #ff69b4;
+}
+
+.forgot-link {
+  color: #ff69b4;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+/* Tombol login */
+.login-button {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(to right, #ff69b4, #ff1493);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-bottom: 25px;
+}
+
+.login-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 105, 180, 0.3);
+}
+
+.login-button:active {
+  transform: translateY(0);
+}
+
+/* Pembatas */
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 25px 0;
+  color: #8888aa;
+}
+
+.divider::before, .divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 105, 180, 0.3);
+}
+
+.divider span {
+  padding: 0 15px;
+  font-size: 0.9rem;
+}
+
+/* Login sosial */
+.social-login {
+  margin-bottom: 25px;
+}
+
+.social-text {
+  text-align: center;
+  color: #b0b0d0;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background: rgba(20, 20, 50, 0.7);
+  border: 1px solid rgba(255, 105, 180, 0.3);
+  border-radius: 8px;
+  color: #d0d0f0;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  flex: 1;
+}
+
+.social-button:hover {
+  background: rgba(255, 105, 180, 0.1);
+  border-color: #ff69b4;
+}
+
+/* Ikon sosial - placeholder warna pink */
+.pink-icon {
+  width: 20px;
+  height: 20px;
+  background-color: #ff69b4;
+  border-radius: 50%;
+}
+
+/* Link pendaftaran */
+.signup-link {
+  text-align: center;
+  color: #b0b0d0;
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+.signup-link a {
+  color: #ff69b4;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 105, 180, 0.2);
+  text-align: center;
+  color: #8888aa;
+  font-size: 0.8rem;
+}
+
+.footer p {
+  margin-bottom: 10px;
+}
+
+.footer a {
+  color: #ff69b4;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Animasi */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.3; }
+  100% { opacity: 0.7; }
+}
+
+/* Responsif */
+@media (max-width: 600px) {
+  .astro-login-card {
+    padding: 30px 20px;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .social-buttons {
+    flex-direction: column;
+  }
+}
