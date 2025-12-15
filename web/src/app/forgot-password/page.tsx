@@ -111,3 +111,22 @@ export default function ForgotPasswordPage() {
                   'Kirim Tautan Reset'
                 )}
               </button>
+
+              
+              {/* Alternative Options */}
+              <div className={styles.alternativeOptions}>
+                <p className={styles.alternativeText}>
+                  Lupa email Anda?{' '}
+                  <button 
+                    type="button"
+                    className={styles.alternativeLink}
+                    onClick={() => console.log('Contact support clicked')}
+                  >
+                    Hubungi Dukungan
+                  </button>
+                </p>
+              </div>
+            </form>
+          ) : (
+            <SuccessMessage email={email} onBack={handleBackToLogin} />
+          )}
