@@ -130,3 +130,24 @@ export default function ForgotPasswordPage() {
           ) : (
             <SuccessMessage email={email} onBack={handleBackToLogin} />
           )}
+
+                    {/* Cosmic Guidance */}
+          <div className={styles.guidanceSection}>
+            <div className={styles.guidanceIcon}>🔮</div>
+            <p className={styles.guidanceText}>
+              <strong>Panduan Kosmik:</strong> Periksa folder spam jika Anda tidak menerima email dalam 5 menit
+            </p>
+          </div>
+        </div>
+
+               {/* Footer */}
+        <footer className={styles.footer}>
+          <p>© 2023 Astro Oracles • Password Recovery</p>
+          <p className={styles.securityNote}>
+            ⚡ Tautan reset akan kedaluwarsa dalam 1 jam untuk keamanan
+          </p>
+        </footer>
+      </div>
+    </div>
+  );
+}
