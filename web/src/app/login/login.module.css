@@ -1,22 +1,7 @@
-/* App.css */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+/* src/app/login/login.module.css */
 
-body {
-  background: linear-gradient(135deg, #0a0a2a 0%, #1a1a3a 100%);
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  overflow-x: hidden;
-}
-
-.astro-login-container {
+/* Container utama */
+.astroLoginContainer {
   position: relative;
   width: 100%;
   min-height: 100vh;
@@ -24,10 +9,13 @@ body {
   justify-content: center;
   align-items: center;
   padding: 20px;
+  background: linear-gradient(135deg, #0a0a2a 0%, #1a1a3a 100%);
+  color: #fff;
+  overflow-x: hidden;
 }
 
 /* Latar belakang bintang */
-.stars-background {
+.starsBackground {
   position: absolute;
   top: 0;
   left: 0;
@@ -45,14 +33,14 @@ body {
   opacity: 0.7;
 }
 
-.stars-background-2 {
+.starsBackground2 {
   transform: scale(1.1);
   opacity: 0.5;
   animation: twinkle 4s infinite alternate;
 }
 
 /* Kartu login */
-.astro-login-card {
+.astroLoginCard {
   background: rgba(10, 10, 42, 0.85);
   backdrop-filter: blur(10px);
   border-radius: 20px;
@@ -66,7 +54,7 @@ body {
   overflow: hidden;
 }
 
-.astro-login-card::before {
+.astroLoginCard::before {
   content: '';
   position: absolute;
   top: -50%;
@@ -78,13 +66,13 @@ body {
 }
 
 /* Logo */
-.logo-container {
+.logoContainer {
   text-align: center;
   margin-bottom: 30px;
 }
 
 /* Placeholder untuk logo/gambar utama - Warna pink sementara */
-.astro-logo-placeholder {
+.astroLogoPlaceholder {
   width: 120px;
   height: 120px;
   margin: 0 auto 20px;
@@ -119,7 +107,7 @@ body {
 }
 
 /* Bintang-bintang kecil */
-.stars-small, .stars-small-2 {
+.starsSmall {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -130,7 +118,7 @@ body {
     radial-gradient(2px 2px at 75px 75px, #ff69b4, transparent);
 }
 
-.stars-small-2 {
+.starsSmall2 {
   transform: rotate(45deg);
 }
 
@@ -153,22 +141,22 @@ body {
 }
 
 /* Form */
-.login-form {
+.loginForm {
   margin-top: 30px;
 }
 
-.form-group {
+.formGroup {
   margin-bottom: 25px;
 }
 
-.form-label {
+.formLabel {
   display: block;
   margin-bottom: 8px;
   color: #d0d0f0;
   font-weight: 500;
 }
 
-.form-input {
+.formInput {
   width: 100%;
   padding: 15px 20px;
   background: rgba(20, 20, 50, 0.7);
@@ -179,48 +167,48 @@ body {
   transition: all 0.3s;
 }
 
-.form-input:focus {
+.formInput:focus {
   outline: none;
   border-color: #ff69b4;
   box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
 }
 
-.form-input::placeholder {
+.formInput::placeholder {
   color: #8888aa;
 }
 
 /* Opsi form */
-.form-options {
+.formOptions {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 25px;
 }
 
-.checkbox-label {
+.checkboxLabel {
   display: flex;
   align-items: center;
   color: #d0d0f0;
   cursor: pointer;
 }
 
-.checkbox-label input {
+.checkboxLabel input {
   margin-right: 8px;
   accent-color: #ff69b4;
 }
 
-.forgot-link {
+.forgotLink {
   color: #ff69b4;
   text-decoration: none;
   font-size: 0.9rem;
 }
 
-.forgot-link:hover {
+.forgotLink:hover {
   text-decoration: underline;
 }
 
 /* Tombol login */
-.login-button {
+.loginButton {
   width: 100%;
   padding: 16px;
   background: linear-gradient(to right, #ff69b4, #ff1493);
@@ -235,12 +223,12 @@ body {
   margin-bottom: 25px;
 }
 
-.login-button:hover {
+.loginButton:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(255, 105, 180, 0.3);
 }
 
-.login-button:active {
+.loginButton:active {
   transform: translateY(0);
 }
 
@@ -265,24 +253,24 @@ body {
 }
 
 /* Login sosial */
-.social-login {
+.socialLogin {
   margin-bottom: 25px;
 }
 
-.social-text {
+.socialText {
   text-align: center;
   color: #b0b0d0;
   margin-bottom: 15px;
   font-size: 0.9rem;
 }
 
-.social-buttons {
+.socialButtons {
   display: flex;
   justify-content: center;
   gap: 15px;
 }
 
-.social-button {
+.socialButton {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -298,34 +286,37 @@ body {
   flex: 1;
 }
 
-.social-button:hover {
+.socialButton:hover {
   background: rgba(255, 105, 180, 0.1);
   border-color: #ff69b4;
 }
 
 /* Ikon sosial - placeholder warna pink */
-.pink-icon {
+.socialIcon {
   width: 20px;
   height: 20px;
+}
+
+.pinkIcon {
   background-color: #ff69b4;
   border-radius: 50%;
 }
 
 /* Link pendaftaran */
-.signup-link {
+.signupLink {
   text-align: center;
   color: #b0b0d0;
   margin-top: 20px;
   font-size: 0.9rem;
 }
 
-.signup-link a {
+.signupLink a {
   color: #ff69b4;
   text-decoration: none;
   font-weight: 500;
 }
 
-.signup-link a:hover {
+.signupLink a:hover {
   text-decoration: underline;
 }
 
@@ -365,7 +356,7 @@ body {
 
 /* Responsif */
 @media (max-width: 600px) {
-  .astro-login-card {
+  .astroLoginCard {
     padding: 30px 20px;
   }
   
@@ -373,7 +364,7 @@ body {
     font-size: 2rem;
   }
   
-  .social-buttons {
+  .socialButtons {
     flex-direction: column;
   }
 }
