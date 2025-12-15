@@ -16,6 +16,16 @@ type SignUpFormData = {
   newsletter: boolean;
 };
 
+export interface FormErrors {
+  username?: string;
+  email?: string;
+  password?: string;
+  confirmPassword?: string;
+  birthDate?: string;
+  zodiac?: string;
+  agreeTerms?: string;
+}
+
 type ZodiacOption = {
   value: string;
   label: string;
@@ -55,7 +65,7 @@ export default function SignUpPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [formStep, setFormStep] = useState<'basic' | 'zodiac'>('basic');
   const [passwordStrength, setPasswordStrength] = useState(0);
-  const [errors, setErrors] = useState<Partial<SignUpFormData>>({});
+  const [errors, setErrors] = useState<FormErrors>({});
 
   const calculatePasswordStrength = (password: string) => {
     let strength = 0;
@@ -76,7 +86,7 @@ export default function SignUpPage() {
   };
 
    const validateForm = (): boolean => {
-    const newErrors: Partial<SignUpFormData> = {};
+    const newErrors: FormErrors = {};
 
     if (!formData.username.trim()) {
       newErrors.username = 'Username diperlukan';
@@ -102,9 +112,9 @@ export default function SignUpPage() {
       newErrors.zodiac = 'Pilih zodiak Anda';
     }
 
-    if (!formData.agreeTerms) {
-      newErrors.agreeTerms = 'Anda harus menyetujui syarat dan ketentuan';
-    }
+  if (!formData.agreeTerms) {
+    newErrors.agreeTerms = 'Anda harus menyetujui syarat dan ketentuan';
+  }
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -339,7 +349,7 @@ function BasicInfoStep({
   onChange 
 }: { 
   formData: SignUpFormData;
-  errors: Partial<SignUpFormData>;
+  errors: FormErrors;
   passwordStrength: number;
   onChange: (field: keyof SignUpFormData, value: string | boolean) => void;
 }) {
@@ -475,7 +485,7 @@ function ZodiacStep({
   onBack 
 }: { 
   formData: SignUpFormData;
-  errors: Partial<SignUpFormData>;
+  errors: FormErrors;
   onChange: (field: keyof SignUpFormData, value: string | boolean) => void;
   onBack: () => void;
 }) {
