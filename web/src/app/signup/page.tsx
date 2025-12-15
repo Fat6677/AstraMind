@@ -265,3 +265,26 @@ export default function SignUpPage() {
               )}
             </div>
           </form>
+
+                   {/* Divider */}
+          <div className={styles.divider}>
+            <span>atau lanjutkan dengan</span>
+          </div>
+
+          {/* Social Sign Up */}
+          <div className={styles.socialSection}>
+            <div className={styles.socialButtons}>
+              <button className={styles.socialButton}>
+                <span className={styles.socialIcon}>G</span>
+                Google
+              </button>
+              <button className={styles.socialButton}>
+                <span className={styles.socialIcon}>F</span>
+                Facebook
+              </button>
+              <button className={styles.socialButton}>
+                <span className={styles.socialIcon}>A</span>
+                Apple
+              </button>
+            </div>
+          </div>
