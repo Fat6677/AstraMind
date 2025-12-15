@@ -2,329 +2,453 @@
 
 /* Container Styling */
 .signUpContainer {
-  position: relative;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2a 30%, #0a1a2a 70%, #0a0a1a 100%);
-  color: #f8f9fa;
-  overflow-x: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem 1rem;
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2a 30%, #0a1a2a 70%, #0a0a1a 100%);
+    color: #f8f9fa;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
 }
 
 .cosmicBackground {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    radial-gradient(circle at 10% 20%, rgba(106, 13, 173, 0.15) 0%, transparent 40%),
-    radial-gradient(circle at 90% 80%, rgba(13, 71, 173, 0.1) 0%, transparent 40%),
-    radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.08) 0%, transparent 60%);
-  z-index: 0;
-  animation: cosmicPulse 20s ease-in-out infinite alternate;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(106, 13, 173, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(13, 71, 173, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.08) 0%, transparent 60%);
+    z-index: 0;
+    animation: cosmicPulse 20s ease-in-out infinite alternate;
 }
 
 .nebulaEffect {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    radial-gradient(circle at 30% 30%, rgba(156, 39, 176, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 70% 70%, rgba(33, 150, 243, 0.08) 0%, transparent 50%);
-  z-index: 1;
-  filter: blur(40px);
-  opacity: 0.6;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 30% 30%, rgba(156, 39, 176, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 70% 70%, rgba(33, 150, 243, 0.08) 0%, transparent 50%);
+    z-index: 1;
+    filter: blur(40px);
+    opacity: 0.6;
 }
 
 .floatingStars {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-  background-image: 
-    radial-gradient(1px 1px at 20% 30%, rgba(255, 255, 255, 0.6), transparent),
-    radial-gradient(1px 1px at 40% 70%, rgba(255, 255, 255, 0.4), transparent),
-    radial-gradient(2px 2px at 60% 20%, rgba(255, 255, 255, 0.5), transparent),
-    radial-gradient(1px 1px at 80% 90%, rgba(255, 255, 255, 0.3), transparent);
-  animation: starFloat 50s linear infinite;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    background-image:
+        radial-gradient(1px 1px at 20% 30%, rgba(255, 255, 255, 0.6), transparent),
+        radial-gradient(1px 1px at 40% 70%, rgba(255, 255, 255, 0.4), transparent),
+        radial-gradient(2px 2px at 60% 20%, rgba(255, 255, 255, 0.5), transparent),
+        radial-gradient(1px 1px at 80% 90%, rgba(255, 255, 255, 0.3), transparent);
+    animation: starFloat 50s linear infinite;
 }
 
 .floatingConstellations {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-  background-image: 
-    radial-gradient(2px 2px at 15% 45%, rgba(216, 180, 254, 0.4), transparent),
-    radial-gradient(2px 2px at 85% 25%, rgba(180, 216, 254, 0.3), transparent),
-    radial-gradient(3px 3px at 45% 75%, rgba(254, 180, 216, 0.4), transparent);
-  animation: constellationFloat 80s linear infinite reverse;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    background-image:
+        radial-gradient(2px 2px at 15% 45%, rgba(216, 180, 254, 0.4), transparent),
+        radial-gradient(2px 2px at 85% 25%, rgba(180, 216, 254, 0.3), transparent),
+        radial-gradient(3px 3px at 45% 75%, rgba(254, 180, 216, 0.4), transparent);
+    animation: constellationFloat 80s linear infinite reverse;
 }
 
 /* Decorative Planets */
 .planetOne,
 .planetTwo,
 .planetThree {
-  position: fixed;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 0;
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
 }
 
 .planetOne {
-  width: 120px;
-  height: 120px;
-  top: 10%;
-  right: 10%;
-  background: radial-gradient(circle at 30% 30%, #8b5cf6, transparent 70%);
-  opacity: 0.3;
-  animation: planetFloat 20s ease-in-out infinite;
+    width: 120px;
+    height: 120px;
+    top: 10%;
+    right: 10%;
+    background: radial-gradient(circle at 30% 30%, #8b5cf6, transparent 70%);
+    opacity: 0.3;
+    animation: planetFloat 20s ease-in-out infinite;
 }
 
 .planetTwo {
-  width: 80px;
-  height: 80px;
-  bottom: 20%;
-  left: 5%;
-  background: radial-gradient(circle at 40% 40%, #a855f7, transparent 70%);
-  opacity: 0.2;
-  animation: planetFloat 15s ease-in-out infinite reverse;
+    width: 80px;
+    height: 80px;
+    bottom: 20%;
+    left: 5%;
+    background: radial-gradient(circle at 40% 40%, #a855f7, transparent 70%);
+    opacity: 0.2;
+    animation: planetFloat 15s ease-in-out infinite reverse;
 }
 
 .planetThree {
-  width: 60px;
-  height: 60px;
-  top: 50%;
-  left: 15%;
-  background: radial-gradient(circle at 50% 50%, #d8b4fe, transparent 70%);
-  opacity: 0.25;
-  animation: planetFloat 25s ease-in-out infinite;
+    width: 60px;
+    height: 60px;
+    top: 50%;
+    left: 15%;
+    background: radial-gradient(circle at 50% 50%, #d8b4fe, transparent 70%);
+    opacity: 0.25;
+    animation: planetFloat 25s ease-in-out infinite;
 }
 
 .contentWrapper {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* Navigation */
 .navigation {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-  gap: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .backButton {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 25px;
-  padding: 0.75rem 1.5rem;
-  color: #d0d0f0;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 25px;
+    padding: 0.75rem 1.5rem;
+    color: #d0d0f0;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
 }
 
 .backButton:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.25);
-  color: #ffffff;
-  transform: translateX(-5px);
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    transform: translateX(-5px);
 }
 
 .stepsIndicator {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  background: rgba(20, 15, 45, 0.6);
-  padding: 0.75rem 1.5rem;
-  border-radius: 25px;
-  border: 1px solid rgba(168, 85, 247, 0.2);
-  backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(20, 15, 45, 0.6);
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    backdrop-filter: blur(10px);
 }
 
 .step {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: rgba(255, 255, 255, 0.5);
-  transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.5);
+    transition: color 0.3s ease;
 }
 
 .step.active {
-  color: #ffffff;
+    color: #ffffff;
 }
 
 .stepNumber {
-  width: 28px;
-  height: 28px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
 .step.active .stepNumber {
-  background: linear-gradient(135deg, #8b5cf6, #a855f7);
-  box-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
+    background: linear-gradient(135deg, #8b5cf6, #a855f7);
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
 }
 
 .stepLabel {
-  font-size: 0.9rem;
-  font-weight: 500;
+    font-size: 0.9rem;
+    font-weight: 500;
 }
 
 .stepLine {
-  width: 30px;
-  height: 2px;
-  background: rgba(255, 255, 255, 0.1);
+    width: 30px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
 }
 
 /* Main Card */
 .signUpCard {
-  background: rgba(20, 15, 45, 0.7);
-  backdrop-filter: blur(20px);
-  border-radius: 28px;
-  padding: 3rem;
-  border: 1px solid rgba(168, 85, 247, 0.2);
-  box-shadow: 
-    0 20px 60px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 3rem;
+    background: rgba(20, 15, 45, 0.7);
+    backdrop-filter: blur(20px);
+    border-radius: 28px;
+    padding: 3rem;
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 3rem;
 }
 
 .signUpCard::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, 
-    transparent 0%, 
-    rgba(168, 85, 247, 0.8) 50%, 
-    transparent 100%);
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(168, 85, 247, 0.8) 50%,
+            transparent 100%);
 }
 
 /* Header Section */
 .headerSection {
-  text-align: center;
-  margin-bottom: 2.5rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
 }
 
 .cosmicPortal {
-  position: relative;
-  width: 120px;
-  height: 120px;
-  margin: 0 auto 1.5rem;
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1.5rem;
 }
 
 .portalInner {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, #8b5cf6, #a855f7, #d8b4fe);
-  border-radius: 50%;
-  box-shadow: 
-    0 0 40px rgba(168, 85, 247, 0.6),
-    inset 0 0 20px rgba(255, 255, 255, 0.3);
-  animation: portalPulse 3s ease-in-out infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #8b5cf6, #a855f7, #d8b4fe);
+    border-radius: 50%;
+    box-shadow:
+        0 0 40px rgba(168, 85, 247, 0.6),
+        inset 0 0 20px rgba(255, 255, 255, 0.3);
+    animation: portalPulse 3s ease-in-out infinite;
 }
 
 .portalOrbit {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100px;
-  height: 100px;
-  border: 2px dashed rgba(168, 85, 247, 0.3);
-  border-radius: 50%;
-  animation: portalRotate 10s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border: 2px dashed rgba(168, 85, 247, 0.3);
+    border-radius: 50%;
+    animation: portalRotate 10s linear infinite;
 }
 
 .portalGlow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  box-shadow: 
-    inset 0 0 60px rgba(168, 85, 247, 0.3),
-    0 0 80px rgba(168, 85, 247, 0.2);
-  animation: portalGlow 4s ease-in-out infinite alternate;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow:
+        inset 0 0 60px rgba(168, 85, 247, 0.3),
+        0 0 80px rgba(168, 85, 247, 0.2);
+    animation: portalGlow 4s ease-in-out infinite alternate;
 }
 
 .mainTitle {
-  font-size: 2.8rem;
-  font-weight: 300;
-  margin-bottom: 0.75rem;
-  background: linear-gradient(135deg, #ffffff 0%, #d8b4fe 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  letter-spacing: 0.5px;
-  font-family: 'Georgia', serif;
+    font-size: 2.8rem;
+    font-weight: 300;
+    margin-bottom: 0.75rem;
+    background: linear-gradient(135deg, #ffffff 0%, #d8b4fe 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 0.5px;
+    font-family: 'Georgia', serif;
 }
 
 .subtitle {
-  font-size: 1.1rem;
-  color: #b0b0d0;
-  line-height: 1.6;
-  max-width: 500px;
-  margin: 0 auto;
-  font-weight: 300;
+    font-size: 1.1rem;
+    color: #b0b0d0;
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto;
+    font-weight: 300;
 }
 
 /* Progress Bar */
 .progressBar {
-  height: 4px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 2px;
-  margin-bottom: 2.5rem;
-  overflow: hidden;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    margin-bottom: 2.5rem;
+    overflow: hidden;
 }
 
 .progressFill {
-  height: 100%;
-  background: linear-gradient(90deg, #8b5cf6, #a855f7);
-  border-radius: 2px;
-  transition: width 0.6s ease;
+    height: 100%;
+    background: linear-gradient(90deg, #8b5cf6, #a855f7);
+    border-radius: 2px;
+    transition: width 0.6s ease;
 }
 
 /* Form Styling */
 .signUpForm {
-  margin-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
 }
 
 .formStep {
-  animation: fadeInSlide 0.5s ease-out;
+    animation: fadeInSlide 0.5s ease-out;
+}
+
+/* Input Grid */
+.inputGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.inputGroup {
+    position: relative;
+}
+
+.inputLabel {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    color: #e0e0f0;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.labelIcon {
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+.formInput {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(30, 25, 60, 0.6);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.formInput:focus {
+    outline: none;
+    border-color: #a855f7;
+    box-shadow:
+        0 0 0 3px rgba(168, 85, 247, 0.15),
+        0 0 20px rgba(168, 85, 247, 0.2);
+    background: rgba(30, 25, 60, 0.8);
+}
+
+.formInput::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+    font-style: italic;
+}
+
+.inputError {
+    border-color: #ef4444 !important;
+    background: rgba(239, 68, 68, 0.1) !important;
+}
+
+.inputError:focus {
+    box-shadow:
+        0 0 0 3px rgba(239, 68, 68, 0.15),
+        0 0 20px rgba(239, 68, 68, 0.2) !important;
+}
+
+/* Error & Success Messages */
+.errorMessage {
+    color: #ef4444;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    padding-left: 0.25rem;
+    animation: fadeIn 0.3s ease;
+}
+
+.successMessage {
+    color: #10b981;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    padding-left: 0.25rem;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Password Strength Meter */
+.strengthMeter {
+    margin-top: 0.75rem;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+}
+
+.strengthBar {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.strengthBar.weak {
+    background: linear-gradient(90deg, #ef4444, #f87171);
+}
+
+.strengthBar.fair {
+    background: linear-gradient(90deg, #f59e0b, #fbbf24);
+}
+
+.strengthBar.good {
+    background: linear-gradient(90deg, #10b981, #34d399);
+}
+
+.strengthBar.strong {
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+}
+
+.strengthLabel {
+    position: absolute;
+    right: 0;
+    top: -20px;
+    font-size: 0.8rem;
+    color: #d0d0f0;
+    font-weight: 500;
+    text-transform: capitalize;
 }
