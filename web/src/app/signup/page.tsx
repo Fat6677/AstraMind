@@ -466,3 +466,110 @@ function BasicInfoStep({
     </div>
   );
 }
+
+// Zodiac Step Component
+function ZodiacStep({ 
+  formData, 
+  errors, 
+  onChange, 
+  onBack 
+}: { 
+  formData: SignUpFormData;
+  errors: Partial<SignUpFormData>;
+  onChange: (field: keyof SignUpFormData, value: string | boolean) => void;
+  onBack: () => void;
+}) {
+  return (
+    <div className={styles.formStep}>
+      {/* Zodiac Selection */}
+      <div className={styles.zodiacSection}>
+        <h3 className={styles.sectionTitle}>
+          <span className={styles.titleIcon}>♋</span>
+          Pilih Zodiak Anda
+        </h3>
+        <p className={styles.sectionDescription}>
+          Zodiak akan membantu kami memberikan ramalan yang lebih personal
+        </p>
+        
+        <div className={styles.zodiacGrid}>
+          {zodiacOptions.map((zodiac) => (
+            <button
+              key={zodiac.value}
+              type="button"
+              className={`${styles.zodiacOption} ${
+                formData.zodiac === zodiac.value ? styles.selected : ''
+              }`}
+              onClick={() => onChange('zodiac', zodiac.value)}
+            >
+              <div className={styles.zodiacSymbol}>{zodiac.symbol}</div>
+              <div className={styles.zodiacInfo}>
+                <h4>{zodiac.label}</h4>
+                <p className={styles.zodiacDates}>{zodiac.dates}</p>
+                <span className={styles.zodiacElement}>{zodiac.element}</span>
+              </div>
+              {formData.zodiac === zodiac.value && (
+                <div className={styles.selectedIndicator}>✓</div>
+              )}
+            </button>
+          ))}
+        </div>
+        
+        {errors.zodiac && (
+          <div className={styles.errorMessage}>{errors.zodiac}</div>
+        )}
+      </div>
+
+      {/* Preferences */}
+      <div className={styles.preferencesSection}>
+        <div className={styles.checkboxGroup}>
+          <label className={styles.checkboxLabel}>
+            <input
+              type="checkbox"
+              checked={formData.agreeTerms}
+              onChange={(e) => onChange('agreeTerms', e.target.checked)}
+              className={styles.checkboxInput}
+            />
+            <span className={styles.checkboxCustom}></span>
+            <span className={styles.checkboxText}>
+              Saya setuju dengan{' '}
+              <button type="button" className={styles.inlineLink}>
+                Syarat Layanan
+              </button>{' '}
+              dan{' '}
+              <button type="button" className={styles.inlineLink}>
+                Kebijakan Privasi
+              </button>
+            </span>
+          </label>
+          {errors.agreeTerms && (
+            <div className={styles.errorMessage}>{errors.agreeTerms}</div>
+          )}
+        </div>
+
+        <div className={styles.checkboxGroup}>
+          <label className={styles.checkboxLabel}>
+            <input
+              type="checkbox"
+              checked={formData.newsletter}
+              onChange={(e) => onChange('newsletter', e.target.checked)}
+              className={styles.checkboxInput}
+            />
+            <span className={styles.checkboxCustom}></span>
+            <span className={styles.checkboxText}>
+              Saya ingin menerima horoskop mingguan dan update kosmik via email
+            </span>
+          </label>
+        </div>
+      </div>
+
+      {/* Cosmic Tip */}
+      <div className={styles.cosmicTip}>
+        <div className={styles.tipIcon}>💡</div>
+        <p>
+          <strong>Tips Kosmik:</strong> Zodiak yang tepat akan memberikan 
+          insight yang lebih akurat tentang kepribadian dan takdir Anda.
+        </p>
+      </div>
+    </div>
+  );
+}
