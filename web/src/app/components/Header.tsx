@@ -4,7 +4,7 @@ export default function Header() {
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         <div className="flex items-center space-x-2">
           <span className="text-2xl">🌌</span>
-          <h1 className="text-2xl font-bold tracking-tight">Astro AI</h1>
+          <h1 className="text-2xl font-bold tracking-tight">AstraMind</h1>
         </div>
         <p className="text-sm text-gray-500 hidden sm:block">Ramalan Harian Pintar</p>
       </div>

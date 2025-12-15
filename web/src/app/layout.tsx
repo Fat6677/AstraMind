@@ -5,8 +5,8 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Astro AI - Ramalan Harian',
-  description: 'Dapatkan ramalan harian pribadi Anda dari Astro AI.',
+  title: 'AstraMind - Ramalan Harian',
+  description: 'Dapatkan ramalan harian pribadi Anda dari AstraMind.',
 };
 
 export default function RootLayout({

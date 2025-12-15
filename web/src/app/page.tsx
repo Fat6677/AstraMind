@@ -65,7 +65,7 @@ export default function HomePage() {
                     Temukan Jalan Anda <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">Hari Ini</span>
                   </h2>
                   <p className="text-lg text-gray-600 mb-8 max-w-xl">
-                    Pilih zodiak Kamu dan dapatkan wawasan unik dari Astro AI, asisten ramalan harian anda
+                    Pilih zodiak Kamu dan dapatkan wawasan unik dari AstraMind, asisten ramalan harian anda
                   </p>
                 </>
               )}
