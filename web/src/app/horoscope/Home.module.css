@@ -1,0 +1,95 @@
+/* Container & Background */
+.homeContainer {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2a 30%, #0a1a2a 70%, #0a0a1a 100%);
+  color: #f8f9fa;
+  overflow-x: hidden;
+}
+
+.cosmicBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(106, 13, 173, 0.25) 0%, transparent 45%),
+    radial-gradient(circle at 90% 80%, rgba(13, 71, 173, 0.18) 0%, transparent 45%),
+    radial-gradient(circle at 40% 80%, rgba(168, 85, 247, 0.15) 0%, transparent 55%);
+  z-index: 0;
+  animation: cosmicFloat 20s ease-in-out infinite alternate;
+}
+
+.nebulaOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 30% 30%, rgba(156, 39, 176, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(33, 150, 243, 0.08) 0%, transparent 50%);
+  z-index: 1;
+  filter: blur(60px);
+  opacity: 0.6;
+}
+
+.floatingStars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  background-image: 
+    radial-gradient(2px 2px at 10% 20%, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(2px 2px at 30% 50%, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(3px 3px at 70% 30%, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(2px 2px at 90% 80%, rgba(255, 255, 255, 0.6), transparent);
+  animation: starsTwinkle 4s ease-in-out infinite;
+}
+
+.floatingPlanets {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.planet, .planet2, .planet3 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(10px);
+}
+
+.planet {
+  width: 300px;
+  height: 300px;
+  top: -100px;
+  right: -100px;
+  background: radial-gradient(circle at 30% 30%, rgba(139, 92, 246, 0.1), transparent 70%);
+  animation: planetFloat 25s ease-in-out infinite;
+}
+
+.planet2 {
+  width: 200px;
+  height: 200px;
+  bottom: -50px;
+  left: -50px;
+  background: radial-gradient(circle at 40% 40%, rgba(168, 85, 247, 0.08), transparent 70%);
+  animation: planetFloat 20s ease-in-out infinite reverse;
+}
+
+.planet3 {
+  width: 150px;
+  height: 150px;
+  top: 50%;
+  left: 10%;
+  background: radial-gradient(circle at 50% 50%, rgba(216, 180, 254, 0.06), transparent 70%);
+  animation: planetFloat 30s ease-in-out infinite;
+}
