@@ -293,3 +293,55 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Features Section */}
+      <section id="features-section" className={styles.featuresSection}>
+        <div className={styles.sectionHeader}>
+          <div className={styles.sectionBadge}>🌟</div>
+          <h2 className={styles.sectionTitle}>Fitur Eksklusif Kami</h2>
+          <p className={styles.sectionSubtitle}>
+            Temukan berbagai alat astrologi untuk membantu perjalanan spiritual Anda
+          </p>
+        </div>
+
+        <div className={styles.featuresGrid}>
+          {features.map((feature) => (
+            <div
+              key={feature.id}
+              className={`${styles.featureCard} ${
+                activeFeature === feature.id ? styles.featureActive : ''
+              }`}
+              onMouseEnter={() => setActiveFeature(feature.id)}
+              onMouseLeave={() => setActiveFeature(null)}
+              onClick={() => handleFeatureClick(feature.path)}
+              style={{
+                '--feature-color': feature.color,
+                '--feature-gradient': feature.gradient,
+              } as React.CSSProperties}
+            >
+              {feature.isNew && (
+                <div className={styles.newBadge}>BARU</div>
+              )}
+              {feature.isPopular && (
+                <div className={styles.popularBadge}>POPULAR</div>
+              )}
+
+              <div className={styles.featureIcon}>{feature.icon}</div>
+              
+              <div className={styles.featureContent}>
+                <h3 className={styles.featureTitle}>{feature.title}</h3>
+                <p className={styles.featureDescription}>{feature.description}</p>
+              </div>
+
+              <div className={styles.featureActions}>
+                <button className={styles.exploreButton}>
+                  Jelajahi
+                  <span className={styles.exploreArrow}>→</span>
+                </button>
+              </div>
+
+              <div className={styles.featureGlow}></div>
+            </div>
+          ))}
+        </div>
+      </section>
+
