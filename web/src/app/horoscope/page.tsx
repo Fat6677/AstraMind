@@ -379,3 +379,68 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Footer */}
+      <footer className={styles.footer}>
+        <div className={styles.footerContent}>
+          <div className={styles.footerLogo}>
+            <div className={styles.footerOrb}>
+              <div className={styles.footerOrbCore}></div>
+            </div>
+            <div className={styles.footerLogoText}>
+              <h3>ASTRO ORACLES</h3>
+              <p>Unlock Your Cosmic Destiny</p>
+            </div>
+          </div>
+
+          <div className={styles.footerLinks}>
+            <div className={styles.linkGroup}>
+              <h4>Produk</h4>
+              <button onClick={() => router.push('/compatibility')}>Compatibility Checker</button>
+              <button onClick={() => router.push('/horoscope')}>Daily Horoscope</button>
+              <button onClick={() => router.push('/zodiac')}>Zodiac Insights</button>
+            </div>
+
+            <div className={styles.linkGroup}>
+              <h4>Perusahaan</h4>
+              <button onClick={() => router.push('/about')}>Tentang Kami</button>
+              <button onClick={() => router.push('/blog')}>Blog</button>
+              <button onClick={() => router.push('/careers')}>Karir</button>
+            </div>
+
+            <div className={styles.linkGroup}>
+              <h4>Dukungan</h4>
+              <button onClick={() => router.push('/help')}>Bantuan</button>
+              <button onClick={() => router.push('/contact')}>Kontak</button>
+              <button onClick={() => router.push('/privacy')}>Privasi</button>
+            </div>
+          </div>
+
+          <div className={styles.footerNewsletter}>
+            <h4>Ikuti Update Kosmik</h4>
+            <p>Dapatkan insight astrologi langsung ke inbox Anda</p>
+            <div className={styles.newsletterForm}>
+              <input 
+                type="email" 
+                placeholder="Email Anda" 
+                className={styles.newsletterInput}
+              />
+              <button className={styles.newsletterButton}>
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.footerBottom}>
+          <p>© 2023 Astro Oracles. Semua hak cipta dilindungi.</p>
+          <div className={styles.socialLinks}>
+            <button className={styles.socialButton}>𝕏</button>
+            <button className={styles.socialButton}>𝔽</button>
+            <button className={styles.socialButton}>𝕀</button>
+            <button className={styles.socialButton}>𝕐</button>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
