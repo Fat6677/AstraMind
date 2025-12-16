@@ -32,7 +32,7 @@ export default function HomePage() {
       icon: '💫',
       color: '#8B5CF6',
       gradient: 'linear-gradient(135deg, #8B5CF6 0%, #A855F7 100%)',
-      path: '/compatibility',
+      path: '/compability',
       isPopular: true
     },
     {
