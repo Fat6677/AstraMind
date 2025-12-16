@@ -83,4 +83,73 @@ export default function HomePage() {
     }
   ];
 
-  
+
+  // Zodiac signs for the carousel
+  const zodiacSigns = [
+    { symbol: '♈', name: 'Aries', date: 'Mar 21 - Apr 19' },
+    { symbol: '♉', name: 'Taurus', date: 'Apr 20 - May 20' },
+    { symbol: '♊', name: 'Gemini', date: 'May 21 - Jun 20' },
+    { symbol: '♋', name: 'Cancer', date: 'Jun 21 - Jul 22' },
+    { symbol: '♌', name: 'Leo', date: 'Jul 23 - Aug 22' },
+    { symbol: '♍', name: 'Virgo', date: 'Aug 23 - Sep 22' },
+    { symbol: '♎', name: 'Libra', date: 'Sep 23 - Oct 22' },
+    { symbol: '♏', name: 'Scorpio', date: 'Oct 23 - Nov 21' },
+    { symbol: '♐', name: 'Sagittarius', date: 'Nov 22 - Dec 21' },
+    { symbol: '♑', name: 'Capricorn', date: 'Dec 22 - Jan 19' },
+    { symbol: '♒', name: 'Aquarius', date: 'Jan 20 - Feb 18' },
+    { symbol: '♓', name: 'Pisces', date: 'Feb 19 - Mar 20' }
+  ];
+
+  // Update current time
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      const timeString = now.toLocaleTimeString('id-ID', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+      });
+      setCurrentTime(timeString);
+    };
+
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // Handle scroll progress
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      setScrollProgress(scrollPercent);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Handle feature click
+  const handleFeatureClick = (path: string) => {
+    router.push(path);
+  };
+
+  // Handle login/signup
+  const handleLogin = () => {
+    router.push('/login');
+  };
+
+  const handleSignUp = () => {
+    router.push('/signup');
+  };
+
+  // Scroll to features
+  const scrollToFeatures = () => {
+    document.getElementById('features-section')?.scrollIntoView({
+      behavior: 'smooth'
+    });
+  };
+
