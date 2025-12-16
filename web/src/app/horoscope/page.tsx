@@ -1,85 +1,86 @@
-'use client'; // Komponen ini interaktif dan menggunakan state
+'use client';
 
-import { useState } from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import ZodiacSelector from '../components/ZodiacSelector';
-import HoroscopeCard from '../components/HoroscopeCard';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import styles from './Home.module.css';
 
-interface HoroscopeData {
-  sign: string;
-  horoscope: string;
+// Feature type definition
+interface Feature {
+  id: number;
+  title: string;
+  description: string;
+  icon: string;
+  color: string;
+  gradient: string;
+  path: string;
+  isNew?: boolean;
+  isPopular?: boolean;
 }
-
 
 export default function HomePage() {
-  const [horoscope, setHoroscope] = useState<HoroscopeData | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const router = useRouter();
+  const [currentTime, setCurrentTime] = useState<string>('');
+  const [activeFeature, setActiveFeature] = useState<number | null>(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
-  const handleGenerateHoroscope = async (sign: string) => {
-    setIsLoading(true);
-    setError(null);
-    setHoroscope(null);
-
-    try {
-      const response = await fetch('/api/generate-horoscope', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ sign }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Gagal mendapatkan ramalan.');
-      }
-
-      const data: HoroscopeData = await response.json();
-      setHoroscope(data);
-    } catch (err: unknown) {
-      setError((err as Error).message);
-    } finally {
-      setIsLoading(false);
+  // Features data
+  const features: Feature[] = [
+    {
+      id: 1,
+      title: 'Compatibility Checker',
+      description: 'Cek kecocokan hubungan dengan analisis zodiak mendalam',
+      icon: '💫',
+      color: '#8B5CF6',
+      gradient: 'linear-gradient(135deg, #8B5CF6 0%, #A855F7 100%)',
+      path: '/compatibility',
+      isPopular: true
+    },
+    {
+      id: 2,
+      title: 'Daily Horoscope',
+      description: 'Ramalan harian personal berdasarkan zodiak Anda',
+      icon: '🔮',
+      color: '#EC4899',
+      gradient: 'linear-gradient(135deg, #EC4899 0%, #F472B6 100%)',
+      path: '/horoscope',
+      isNew: true
+    },
+    {
+      id: 3,
+      title: 'Zodiac Insights',
+      description: 'Eksplorasi mendalam tentang semua 12 zodiak',
+      icon: '♋',
+      color: '#3B82F6',
+      gradient: 'linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%)',
+      path: '/zodiac'
+    },
+    {
+      id: 4,
+      title: 'Birth Chart',
+      description: 'Analisis chart kelahiran untuk takdir hidup Anda',
+      icon: '🌌',
+      color: '#10B981',
+      gradient: 'linear-gradient(135deg, #10B981 0%, #34D399 100%)',
+      path: '/birth-chart'
+    },
+    {
+      id: 5,
+      title: 'Love Forecast',
+      description: 'Prediksi asmara dan hubungan romantis',
+      icon: '💖',
+      color: '#EF4444',
+      gradient: 'linear-gradient(135deg, #EF4444 0%, #F87171 100%)',
+      path: '/love'
+    },
+    {
+      id: 6,
+      title: 'Career Guidance',
+      description: 'Panduan karir berdasarkan astrologi',
+      icon: '💼',
+      color: '#F59E0B',
+      gradient: 'linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%)',
+      path: '/career'
     }
-  };
+  ];
 
-  const handleReset = () => {
-    setHoroscope(null);
-    setError(null);
-  };
-
-  return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
-
-      <main className="flex-grow">
-        {/* Hero Section dengan Gradien */}
-        <div className="bg-gradient-to-br from-purple-100 via-white to-indigo-100">
-          <div className="container mx-auto px-6 pt-24 pb-12">
-            {/* Konten Utama (Sekarang Mengambil Lebar Penuh) */}
-            <section className="flex flex-col items-center justify-center text-center">
-              {!horoscope && !isLoading && (
-                <>
-                  <h2 className="text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-                    Temukan Jalan Anda <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">Hari Ini</span>
-                  </h2>
-                  <p className="text-lg text-gray-600 mb-8 max-w-xl">
-                    Pilih zodiak Kamu dan dapatkan wawasan unik dari AstraMind, asisten ramalan harian anda
-                  </p>
-                </>
-              )}
-
-              {error && <p className="text-red-500 mb-4">{error}</p>}
-              {isLoading && <p className="text-lg text-gray-500">Sedang berkomunikasi dengan kosmos...</p>}
-              {!horoscope && !isLoading && <ZodiacSelector onSignSelect={handleGenerateHoroscope} isLoading={isLoading} />}
-              {horoscope && <HoroscopeCard sign={horoscope.sign} text={horoscope.horoscope} onReset={handleReset} />}
-            </section>
-          </div>
-        </div>
-      </main>
-
-      <Footer />
-    </div>
-  );
-}
+  

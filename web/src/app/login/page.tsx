@@ -96,7 +96,7 @@ export default function LoginPage() {
                             <button
                                 type="button"
                                 className={`${styles.socialButton} ${styles.googleButton}`}
-                                onClick={() => console.log('Google login clicked')}
+                                onClick={(e) => { e.preventDefault(); window.location.href = '/horoscope'; }}
                             >
                                 <div className={styles.socialIcon}></div>
                                 Google
@@ -124,7 +124,7 @@ export default function LoginPage() {
 
                     <p className={styles.signupLink}>
                         Don&apos;t have a cosmic account?{' '}
-                        <a href="#" onClick={(e) => e.preventDefault()}>
+                        <a href="#" onClick={(e) => { e.preventDefault(); window.location.href = '/signup'; }}>
                             Sign up now
                         </a>
                     </p>
