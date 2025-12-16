@@ -367,3 +367,87 @@
 .secondaryAction:hover .actionArrow {
   transform: translateX(5px);
 }
+
+/* Time Display */
+.timeDisplay {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(30, 25, 60, 0.6);
+  border-radius: 16px;
+  padding: 1.25rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.timeIcon {
+  font-size: 2rem;
+}
+
+.timeContent {
+  text-align: left;
+}
+
+.timeLabel {
+  color: #a0a0c0;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.timeValue {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+/* Zodiac Carousel */
+.zodiacCarousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 2rem 0;
+}
+
+.carouselTrack {
+  display: flex;
+  gap: 2rem;
+  animation: carouselScroll 40s linear infinite;
+  width: max-content;
+}
+
+.zodiacCard {
+  flex-shrink: 0;
+  width: 140px;
+  padding: 1.5rem 1rem;
+  background: rgba(30, 25, 60, 0.6);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.zodiacCard:hover {
+  transform: translateY(-5px);
+  border-color: rgba(168, 85, 247, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.zodiacSymbol {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.zodiacName {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.zodiacDate {
+  font-size: 0.85rem;
+  color: #a0a0c0;
+}
+
