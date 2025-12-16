@@ -167,7 +167,7 @@ export default function HomePage() {
 
       {/* Progress Bar */}
       <div className={styles.progressBar}>
-        <div 
+        <div
           className={styles.progressFill}
           style={{ width: `${scrollProgress}%` }}
         ></div>
@@ -184,31 +184,31 @@ export default function HomePage() {
         </div>
 
         <div className={styles.navButtons}>
-          <button 
+          <button
             className={styles.navButton}
             onClick={() => router.push('/about')}
           >
             Tentang Kami
           </button>
-          <button 
+          <button
             className={styles.navButton}
             onClick={scrollToFeatures}
           >
             Fitur
           </button>
-          <button 
+          <button
             className={styles.navButton}
             onClick={() => router.push('/pricing')}
           >
             Premium
           </button>
-          <button 
+          <button
             className={styles.loginButton}
             onClick={handleLogin}
           >
             Masuk
           </button>
-          <button 
+          <button
             className={styles.signupButton}
             onClick={handleSignUp}
           >
@@ -230,7 +230,7 @@ export default function HomePage() {
           </h1>
 
           <p className={styles.heroSubtitle}>
-            Jelajahi rahasia bintang, pahami hubungan, dan temukan potensi terbaik Anda 
+            Jelajahi rahasia bintang, pahami hubungan, dan temukan potensi terbaik Anda
             dengan panduan astrologi yang personal dan akurat.
           </p>
 
@@ -250,13 +250,13 @@ export default function HomePage() {
           </div>
 
           <div className={styles.heroActions}>
-            <button 
+            <button
               className={styles.primaryAction}
               onClick={handleSignUp}
             >
               Mulai Perjalanan Kosmik
             </button>
-            <button 
+            <button
               className={styles.secondaryAction}
               onClick={scrollToFeatures}
             >
@@ -279,8 +279,8 @@ export default function HomePage() {
         <div className={styles.zodiacCarousel}>
           <div className={styles.carouselTrack}>
             {[...zodiacSigns, ...zodiacSigns].map((sign, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className={styles.zodiacCard}
                 style={{ animationDelay: `${index * 0.5}s` }}
               >
@@ -307,9 +307,8 @@ export default function HomePage() {
           {features.map((feature) => (
             <div
               key={feature.id}
-              className={`${styles.featureCard} ${
-                activeFeature === feature.id ? styles.featureActive : ''
-              }`}
+              className={`${styles.featureCard} ${activeFeature === feature.id ? styles.featureActive : ''
+                }`}
               onMouseEnter={() => setActiveFeature(feature.id)}
               onMouseLeave={() => setActiveFeature(null)}
               onClick={() => handleFeatureClick(feature.path)}
@@ -326,7 +325,7 @@ export default function HomePage() {
               )}
 
               <div className={styles.featureIcon}>{feature.icon}</div>
-              
+
               <div className={styles.featureContent}>
                 <h3 className={styles.featureTitle}>{feature.title}</h3>
                 <p className={styles.featureDescription}>{feature.description}</p>
@@ -358,18 +357,18 @@ export default function HomePage() {
           </h2>
 
           <p className={styles.ctaDescription}>
-            Bergabunglah dengan komunitas astrologi terbesar dan temukan 
+            Bergabunglah dengan komunitas astrologi terbesar dan temukan
             takdir sejati Anda bersama ribuan pengguna lainnya.
           </p>
 
           <div className={styles.ctaButtons}>
-            <button 
+            <button
               className={styles.ctaPrimary}
               onClick={handleSignUp}
             >
               Daftar Sekarang Gratis
             </button>
-            <button 
+            <button
               className={styles.ctaSecondary}
               onClick={() => router.push('/demo')}
             >
@@ -419,9 +418,9 @@ export default function HomePage() {
             <h4>Ikuti Update Kosmik</h4>
             <p>Dapatkan insight astrologi langsung ke inbox Anda</p>
             <div className={styles.newsletterForm}>
-              <input 
-                type="email" 
-                placeholder="Email Anda" 
+              <input
+                type="email"
+                placeholder="Email Anda"
                 className={styles.newsletterInput}
               />
               <button className={styles.newsletterButton}>
